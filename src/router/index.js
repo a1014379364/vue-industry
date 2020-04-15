@@ -1,22 +1,58 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
 
-  const routes = [
+const Home = () =>import('@/views/home/Home.vue')
+const Finance = () =>import('@/views/finance/Finance.vue')
+const Login = () =>import('@/views/login/Login.vue')
+const Message = () =>import('@/views/message/Message.vue')
+const Power = () =>import('@/views/power/Power.vue')
+const Production = () =>import('@/views/production/Production.vue')
+const Recharge = () =>import('@/views/recharge/Recharge.vue')
+const Sell = () =>import('@/views/sell/Sell.vue')
+const Stock = () =>import('@/views/stock/Stock.vue')
+
+const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: Home
+    path:'/',
+    redirect:'/home'
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path:'/home',
+    component:Home
+  },
+  {
+    path:'/finance',
+    component:Finance
+  },
+  {
+    path:'/login',
+    component:Login
+  },
+  {
+    path:'/message',
+    component:Message
+  },
+  {
+    path:'/power',
+    component:Power
+  },
+  {
+    path:'/production',
+    component:Production
+  },
+  {
+    path:'/recharge',
+    component:Recharge
+  },
+  {
+    path:'/sell',
+    component:Sell
+  },
+  {
+    path:'/stock',
+    component:Stock
   }
 ]
 
